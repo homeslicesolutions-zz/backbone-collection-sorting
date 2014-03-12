@@ -1,8 +1,12 @@
-// Backbone Override 
+//     Backbone.Collection.sorting v0.1
+//     by Joseph Vu - joe.vu@homeslicesolutions.com
+//     For all details and documentation:
+//     https://github.com/homeslicesolutions/backbone-collection-sorting
+
 !function(_, Backbone){
 
   // Extending out
-  _.extend(Backbone.Collection.prototype, { 
+  _.extend(Backbone.Collection.prototype, {  
 
   	//@Main Sorting object. Format like so: { by: (attribute), type: ("numeric","alpha","date", or "boolean"), direction: ("ascending" or "descending") }
   	sorting: null,
