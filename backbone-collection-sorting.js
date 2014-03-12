@@ -75,7 +75,7 @@
 
     //@Set Sorting method
     setSorting: function( data, options ) {
-      this.sorting = _.extend( this.sorting || this._sortingDefault, data );
+      this.sorting = _.extend({}, this.sorting || this._sortingDefault, data );
       if (!options || !options.silent) this.sort();
     },
 
