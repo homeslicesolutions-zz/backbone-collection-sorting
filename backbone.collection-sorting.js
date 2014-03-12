@@ -88,7 +88,7 @@
 
       var date = new Date(dateString);
 
-      if (dateString.toString().match(/^([0-9]+)\-([0-9]+)\-([0-9]+)T/g)) {
+      if (isNaN(date.getTime()) && dateString.toString().match(/^([0-9]+)\-([0-9]+)\-([0-9]+)T/g)) {
           var dateString = dateString.toString(),
               cal = dateString.split('T')[0].split('-'),
               time = dateString.split('T')[1].split(':');
