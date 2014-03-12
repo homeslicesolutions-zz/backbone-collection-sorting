@@ -2,7 +2,7 @@ Backbone.Collection.sorting
 ===========================
 A simple sorting plugin solution for Backbone collections with configurable sort direction and types including numeric, alphabet, dates, and boolean values.
 
-This plugin defines the "comparator" with a method that supports various sorting order types and direction. The sort types include:
+This plugin defines the "comparator" with a new method that supports various sorting order types and direction. The sort types include:
 
 1. Numeric
 2. Alphabetical
@@ -12,6 +12,7 @@ This plugin defines the "comparator" with a method that supports various sorting
 You may set the direction in regular ascending order or reversed order (descending).
 
 ## How to use
+Simply set the setting "sorting" in your collection and all newly added models and "sort" triggers will order the collection by this setting.
 ```
 collection.sorting = {
   by: (attribute or "id"),
@@ -19,7 +20,15 @@ collection.sorting = {
   direction: ("ascending" or "descending")
 }
 ```
-Simply set the setting "sorting" in your collection and all newly added models and "sort" triggers will order the collection by this setting.
+
+##### collection.sorting.by
+Choose an attribute or the model's "id" to sort the order by. 
+
+##### collection.sorting.type
+You may sort in any of these valid values: "numeric", "alpha", "date", or "boolean".
+
+##### collection.sorting.direction
+Sort it normally in "ascending" or reversed: "descending" order.
 
 Example:
 ```js
@@ -29,8 +38,8 @@ var arrivals = new Backbone.Collection;
 arrivals.sorting = { by: 'estimated', type: 'date', direction: 'descending' };
 
 arrivals.add(new Arrival({description: "From JFK to SFO", estimated: "2014-04-16T00:00:00Z"}));
-arrivals.add(new Arrival({description: "From LAX to SFO", estimated: "2014-04-16T13:00:00Z"}));
-arrivals.add(new Arrival({description: "From LAS to SFO", estimated: "2014-04-16T01:00:00Z"}));
+arrivals.add(new Arrival({description: "From LAX to SFO", estimated: "2014-05-16T13:00:00Z"}));
+arrivals.add(new Arrival({description: "From LAS to SFO", estimated: "2014-04-16T05:00:00Z"}));
 
 alert(arrivals.pluck('description'));
 // Will result:  From LAX to SFO,From LAS to SFO,From JFK to SFO

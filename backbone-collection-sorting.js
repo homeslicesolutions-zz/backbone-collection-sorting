@@ -1,5 +1,5 @@
 //     Backbone.Collection.sorting v0.1
-//     by Joseph Vu - joe.vu@homeslicesolutions.com
+//     by Joe Vu - joe.vu@homeslicesolutions.com
 //     For all details and documentation:
 //     https://github.com/homeslicesolutions/backbone-collection-sorting
 
@@ -8,10 +8,10 @@
   // Extending out
   _.extend(Backbone.Collection.prototype, {  
 
-  	//@Main Sorting object. Format like so: { by: (attribute), type: ("numeric","alpha","date", or "boolean"), direction: ("ascending" or "descending") }
-  	sorting: null,
+    //@Main Sorting object. Format like so: { by: (attribute), type: ("numeric","alpha","date", or "boolean"), direction: ("ascending" or "descending") }
+    sorting: null,
 
-  	//@Default method
+    //@Default method
     comparator: function(a, b) {
 
       // if "sorting" property not set, just return false;
@@ -21,9 +21,9 @@
       this.sorting = _.extend({}, this._sortingDefault, this.sorting );
 
       // Variables
-      var a = this.sorting.by === 'id' ? a.id : a.get(this.sorting.by),
-          b = this.sorting.by === 'id' ? b.id : b.get(this.sorting.by),
-          isAscending = !this.sorting.direction || this.sorting.direction !== 'descending',
+      var a = this.sorting.by == 'id' ? a.id : a.get(this.sorting.by),
+          b = this.sorting.by == 'id' ? b.id : b.get(this.sorting.by),
+          isAscending = !this.sorting.direction || this.sorting.direction != 'descending',
           sortType = this.sorting.type || 'numeric';
       
       // If attributes don't exist, set back
@@ -45,7 +45,7 @@
       // Numeric types
       } else {
 
-      	// Date: convert date to timestamp
+        // Date: convert date to timestamp
         if (sortType == 'date') {
           a = this._normalizeDate( a ).getTime();
           b = this._normalizeDate( b ).getTime();
@@ -81,9 +81,9 @@
 
     //_Sorting Default object
     _sortingDefault: {
-    	by: 'id',
-    	type: 'numeric',
-    	direction: 'ascending'
+      by: 'id',
+      type: 'numeric',
+      direction: 'ascending'
     },
 
     //_Normalize Date (with added support for IE UTC Dates)
