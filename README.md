@@ -68,6 +68,15 @@ arrivals.setSorting({ by: 'description', type: 'alpha', direction: 'descending' 
 
 alert(arrivals.pluck('description'));
 // Will result:  From LAX to SFO,From LAS to SFO,From JFK to SFO
+
+arrivals.flipSorting();
+
+alert(arrivals.pluck('description'));
+// Will result:  From JFK to SFO,From LAS to SFO,From LAX to SFO
+
+arrivals.getSorting();
+// Will return: { by: 'description', type: 'alpha', direction: 'ascending' }
+
 ```
 
 
