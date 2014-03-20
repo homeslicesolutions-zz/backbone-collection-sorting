@@ -116,5 +116,5 @@ requirejs.config({
  - Added `getSorting` and `flipSorting` functions
 
 #### v0.1
- - First commit!
+ - First commit! 
  
