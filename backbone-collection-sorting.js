@@ -1,4 +1,4 @@
-//     Backbone.Collection.sorting v0.1
+//     Backbone.Collection.sorting v0.1.1
 //     by Joe Vu - joe.vu@homeslicesolutions.com
 //     For all details and documentation:
 //     https://github.com/homeslicesolutions/backbone-collection-sorting
@@ -77,6 +77,16 @@
     setSorting: function( data, options ) {
       this.sorting = _.extend({}, this.sorting || this._sortingDefault, data );
       if (!options || !options.silent) this.sort();
+    },
+
+    //@Get Sorting
+    getSorting: function() {
+      return this.sorting;
+    },
+
+    //@Flip Sorting Direction
+    flipSorting: function() {
+      this.setSorting({ direction: this.sorting.direction === 'ascending' ? 'descending' : 'ascending' });
     },
 
     //_Sorting Default object
