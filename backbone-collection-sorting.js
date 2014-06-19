@@ -112,7 +112,7 @@
           date.setUTCDate( cal[2] );
           date.setUTCHours( time[0] );
           date.setUTCMinutes( time[1] );
-          date.setUTCSeconds( time[2] || 0 );
+          date.setUTCSeconds( parseFloat( time[2] ) || 0 );
       }
 
       return date;
