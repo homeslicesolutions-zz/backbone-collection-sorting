@@ -60,6 +60,8 @@ This is a shortcut to flipping the sort.  If it's "ascending", it'll set it to "
 
 ```js
 arrivals.setSorting({ direction: 'ascending' });
+// or
+arrivals.setSorting('direction', 'ascending');
 // Would result:  From JFK to SFO,From LAS to SFO,From LAX to SFO
 
 arrivals.setSorting({ by: 'description', type: 'alpha', direction: 'descending' });
@@ -70,6 +72,9 @@ arrivals.flipSorting();
 
 arrivals.getSorting();
 // Will return: { by: 'description', type: 'alpha', direction: 'ascending' }
+
+arrivals.getSorting('type');
+// Will return:   alpha
 
 ```
 
@@ -115,6 +120,10 @@ requirejs.config({
 ```
 
 ## Versions
+#### v0.1.2
+ - Added `setSorting` individual attributes similar to `set`
+ - Added getting specified value from key in `getSorting`
+
 #### v0.1.1
  - Added `getSorting` and `flipSorting` functions
 
