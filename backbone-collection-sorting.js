@@ -1,9 +1,17 @@
-//     Backbone.Collection.sorting v0.1.2
+//     Backbone.Collection.sorting v0.1.3
 //     by Joe Vu - joe.vu@homeslicesolutions.com
 //     For all details and documentation:
 //     https://github.com/homeslicesolutions/backbone-collection-sorting
 
-!function(_, Backbone){
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['underscore', 'backbone'], factory);
+    } else {
+        // Browser globals
+        factory(_, Backbone);
+    }
+}(this, function(_, Backbone){
 
   // Extending out
   _.extend(Backbone.Collection.prototype, {  
@@ -129,4 +137,4 @@
     }
   });
 
-}(_, Backbone);
+}));
