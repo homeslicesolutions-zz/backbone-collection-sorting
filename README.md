@@ -120,6 +120,9 @@ requirejs.config({
 ```
 
 ## Versions
+#### v0.1.3
+ - Added UMD standard wrapper
+
 #### v0.1.2
  - Added `setSorting` individual attributes similar to `set`
  - Added getting specified value from key in `getSorting`
