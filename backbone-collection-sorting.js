@@ -35,7 +35,7 @@
           sortType = this.sorting.type || 'numeric';
       
       // If attributes don't exist, set back
-      if (a === void 0 || b === void 0) return -1;
+      if(!a || !b) return -1;
 
       // Alphabetical
       if ( sortType == 'alpha' ) {
