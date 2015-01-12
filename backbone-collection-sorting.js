@@ -23,7 +23,7 @@
     comparator: function(a, b) {
 
       // if "sorting" property not set, just return false;
-      if (!this.sorting) { sort = false; return false; }
+      if (!this.sorting) { this.sort = false; return false; }
 
       // Fill in all the pieces;
       this.sorting = _.extend({}, this._sortingDefault, this.sorting );
